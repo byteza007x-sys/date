@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diary for Im</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Noto+Serif+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section id="loginScreen" class="login-screen" aria-label="เข้าสู่ไดอารี่">
+      <div class="ambient-photo ambient-photo-a">
+        <img src="images/trips/flowers-and-garden/DSC_0838.JPG" alt="">
+      </div>
+      <div class="ambient-photo ambient-photo-b">
+        <img src="images/trips/little-moments/4EDDA850-C072-4613-BC69-73CE7B47A072.jpg" alt="">
+      </div>
+      <div class="ambient-photo ambient-photo-c">
+        <img src="images/trips/flowers-and-garden/DSC_0574.JPG" alt="">
+      </div>
+
+      <div class="login-shell">
+        <div class="slideshow" aria-label="รูปความทรงจำหน้าเข้าสู่ระบบ">
+          <div id="slideTrack" class="slide-track">
+            <figure class="slide" style="--photo: url('images/trips/little-moments/779DD7A1-256D-4DFA-AA65-56F4DF040562.jpg')">
+              <img src="images/trips/little-moments/779DD7A1-256D-4DFA-AA65-56F4DF040562.jpg" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/sea-and-walk/DSC_0461.JPG')">
+              <img src="images/trips/sea-and-walk/DSC_0461.JPG" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/sea-and-walk/DSC_0463.JPG')">
+              <img src="images/trips/sea-and-walk/DSC_0463.JPG" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/sea-and-walk/DSC_0465.JPG')">
+              <img src="images/trips/sea-and-walk/DSC_0465.JPG" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/sea-and-walk/DSC_0466.JPG')">
+              <img src="images/trips/sea-and-walk/DSC_0466.JPG" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/sea-and-walk/DSC_0862.JPG')">
+              <img src="images/trips/sea-and-walk/DSC_0862.JPG" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/school-and-special-days/DSC_0407.JPG')">
+              <img src="images/trips/school-and-special-days/DSC_0407.JPG" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/school-and-special-days/DSC_0410.JPG')">
+              <img src="images/trips/school-and-special-days/DSC_0410.JPG" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/flowers-and-garden/DSC_0593.JPG')">
+              <img src="images/trips/flowers-and-garden/DSC_0593.JPG" alt="">
+            </figure>
+            <figure class="slide" style="--photo: url('images/trips/sea-and-walk/DSC_0870.JPG')">
+              <img src="images/trips/sea-and-walk/DSC_0870.JPG" alt="">
+            </figure>
+          </div>
+          <div class="slide-caption">
+            <span>น้องอิม</span>
+            <strong>our little diary</strong>
+          </div>
+          <button id="slidePrev" class="slide-arrow slide-arrow-prev" type="button" aria-label="รูปก่อนหน้า">‹</button>
+          <button id="slideNext" class="slide-arrow slide-arrow-next" type="button" aria-label="รูปถัดไป">›</button>
+          <div id="slideDots" class="slide-dots" aria-label="เลือกรูป"></div>
+        </div>
+
+        <form id="loginForm" class="login-panel" autocomplete="off">
+          <p class="eyebrow">secret diary</p>
+          <h1>สำหรับคนที่รู้รหัสสุดเทพ</h1>
+          <p class="keypad-label">กดรหัส 6 ตัว</p>
+          <input id="passwordInput" name="password" type="hidden">
+          <div id="passcodeDisplay" class="passcode-display" aria-label="รหัสผ่านที่กด">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div id="keypad" class="keypad" aria-label="แป้นกดรหัส">
+            <button type="button" data-key="1">1</button>
+            <button type="button" data-key="2">2</button>
+            <button type="button" data-key="3">3</button>
+            <button type="button" data-key="4">4</button>
+            <button type="button" data-key="5">5</button>
+            <button type="button" data-key="6">6</button>
+            <button type="button" data-key="7">7</button>
+            <button type="button" data-key="8">8</button>
+            <button type="button" data-key="9">9</button>
+            <button type="button" data-action="clear">ล้าง</button>
+            <button type="button" data-key="0">0</button>
+            <button type="button" data-action="backspace">ลบ</button>
+          </div>
+          <button class="primary-button" type="submit">เปิดไดอารี่</button>
+          <p id="loginMessage" class="login-message" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="diaryApp" class="diary-app" hidden>
+      <div id="intro" class="intro">
+        <div class="intro-inner">
+          <p class="eyebrow">welcome</p>
+          <h2>สวัสดีจ้าน้องอิม</h2>
+          <p id="introText" class="intro-text"></p>
+          <div id="introDone" class="intro-done" hidden>เลื่อนลงได้เลยนะ</div>
+          <nav class="quick-nav" aria-label="ไปยังส่วนต่างๆ">
+            <button type="button" data-view="special">เรื่องพิเศษ</button>
+            <button type="button" data-view="diary">ไดอารี่</button>
+            <button type="button" data-view="gallery">แกลเลอรี่</button>
+          </nav>
+        </div>
+      </div>
+
+      <nav id="appNav" class="app-nav" aria-label="เลือกหน้า">
+        <button class="is-active" type="button" data-view="diary">ไดอารี่</button>
+        <button type="button" data-view="special">เรื่องพิเศษ</button>
+        <button type="button" data-view="gallery">แกลเลอรี่</button>
+      </nav>
+
+      <section id="diaryView" class="view-section is-active" data-page="diary">
+        <header id="timelineTitle" class="diary-header">
+          <p class="eyebrow">timeline</p>
+          <h2>ไดอารี่ของพี่</h2>
+          <p id="entryCount">กำลังเปิดสมุด...</p>
+        </header>
+
+        <section id="timeline" class="timeline" aria-label="รายการไดอารี่"></section>
+      </section>
+
+      <section id="specialMemories" class="special-section view-section" data-page="special" hidden>
+        <div class="section-heading">
+          <p class="eyebrow">little heart boxes</p>
+          <h2>เรื่องพิเศษที่อยากจำ</h2>
+        </div>
+        <div id="specialGrid" class="special-grid" aria-label="เรื่องพิเศษ"></div>
+      </section>
+
+      <section id="gallery" class="gallery-section view-section" data-page="gallery" hidden>
+        <div class="gallery-hero">
+          <div>
+            <p class="eyebrow">sunflower gallery</p>
+            <h2>ห้องภาพของเรา</h2>
+          </div>
+        </div>
+        <div id="albumTabs" class="album-tabs" aria-label="เลือกทริป"></div>
+        <div id="galleryGrid" class="gallery-grid" aria-label="แกลเลอรี่รูปภาพ"></div>
+      </section>
+    </section>
+  </main>
+
+  <div id="musicDock" class="music-dock" hidden>
+    <button id="musicToggle" class="music-toggle" type="button" aria-label="เปิดเพลง">
+      <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+    <button id="musicNext" class="music-next" type="button" aria-label="เพลงถัดไป">›</button>
+    <span id="musicLabel">เพลงของเรา</span>
+  </div>
+  <audio id="bgMusic" preload="auto"></audio>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="ปิด" data-close-modal>×</button>
+      <p id="modalDate" class="eyebrow"></p>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody" class="modal-body"></div>
+    </article>
+  </div>
+
+  <script src="gallery-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
